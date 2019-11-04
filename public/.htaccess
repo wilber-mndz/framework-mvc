@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+# Desactivamos las multivistas
+Options -Multiviews
+# Activar la reescritura de URL
+RewriteEngine on
+# Ruta por defecto
+# Al momento de crear un nuevo proyecto debemos cambiar
+# la ruta por el nombre de la carpeta del proyecto
+RewriteBase /mvc/public
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+</IfModule>
