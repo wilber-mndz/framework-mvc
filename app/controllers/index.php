@@ -9,8 +9,8 @@ class Index extends MainController{
 
         // Capturamos los errores
         $error = '';
-        $error.= usernameValidator('');
-        $error.= inputValidator('', 'nombre', 3, 15);
+        // $error.= usernameValidator('wilber');
+        $error.= inputValidator('mÉndez', 'nombre', 3, 15);
 
         echo $error;
 
